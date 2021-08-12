@@ -1,0 +1,40 @@
+body {
+    background-color: aqua;
+    font-family: monospace;
+}
+
+header {
+    background-color: aliceblue;
+    margin: -100px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    padding: 50px;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+    margin-bottom: -8px;
+}
+
+.container1 {
+    margin: 100px;
+    padding: 100px;
+    background-color: aquamarine;
+}
+
+footer {
+    background-color: aliceblue;
+    padding: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+
+.listPosts {
+    list-style-type: none;
+}

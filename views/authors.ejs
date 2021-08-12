@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="header">fantastic book-website
+        <nav class="nav">
+            <img class="logo" src="\images\book.png" alt="icon book">
+            <a href="/">home</a> |
+            <a href="/authors">authors</a> |
+            <a href="/new_author">new_author</a> |
+            <a href="/new_post">new_post</a> |
+            <a href="/author?id=2">info</a> |
+            <a href="/posts">posts</a>
+        </nav>
+    </header>
+    <div class="container1">
+        <ul>
+            <% for(let i = 0; i < authors.length; i++) { %>
+                <li><a href="/author?id=<%= authors[i].id %>"><%= authors[i].name %></a></li>
+            <% } %>
+            
+        </ul>
+    </div>
+
+    <footer class="footer">
+        <p>© 2021</p>
+    </footer>
+    
+</body>
+</html>
