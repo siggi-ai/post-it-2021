@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
     <header class="header">post it! (everyone can be an author)
         <nav class="nav">
             <img class="logo" src="\images\book.png" alt="icon book">
@@ -21,14 +20,20 @@
         </nav>
     </header>
 
-    <div class="container1">
-        <ul>
-            <% for(let i = 0; i < posts.length; i++) { %>
-                <li class="listPosts"><%= [i+1] %>&nbsp;&nbsp;<%= posts[i].title %>:&nbsp;&nbsp;<%= posts[i].post %></a></li>
-            <% } %>
-        </ul> 
+ 
 
-    </div>  
+    <div class="container1">the five latest posts:
+        <ul>
+            <% for(let i = 0; i < fivePosts.length; i++) { %>
+                <li class="listPosts"><%= fivePosts[i].author_id %>(author)&nbsp;&nbsp;<%= fivePosts[i].title %>:&nbsp;&nbsp;<%= fivePosts[i].post %></a></li>
+            <% } %>
+        </ul>
+        
+        <br>
+        <br>
+        
+        <a href="/posts">see all posts</a>
+    </div> 
 
     <footer class="footer">
         <p>© 2021</p>

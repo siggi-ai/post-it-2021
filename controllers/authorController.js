@@ -6,7 +6,6 @@ function renderAuthors(req, res) {
             authors: result
         }
         res.render("authors.ejs", pageData);
-        res.render("posts.ejs", pageData);
     });
 }
 
@@ -40,4 +39,15 @@ function createAuthor(req, res) {
 
 }
 
-module.exports = { renderAuthors, renderAuthor, createAuthor };
+
+
+function authorsSelect(req, res) {
+    author.getAllAuthorsSelect(function (result) {
+        const pageData = {
+            authors: result
+        }
+        res.render("postNew.ejs", pageData);
+    });
+}
+
+module.exports = { renderAuthors, renderAuthor, createAuthor, authorsSelect };

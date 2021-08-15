@@ -7,6 +7,13 @@ function getAllPosts(callback) {
     });
 }
 
+function getFivePosts(callback) {
+    const sql = `SELECT * FROM posts ORDER BY ID DESC LIMIT 5;`;
+    connection.query(sql, function(err, result) {
+        callback(result);
+    });
+}
+
 function insertPost(post, callback) {
     const sql = `INSERT INTO posts (title, post) VALUES(?, ?)`;
     const params = [ post.title, post.postNew ];
@@ -18,12 +25,12 @@ function insertPost(post, callback) {
     });
 }
 
-/* function getPostByAuthor(id, callback) {
-    const sql = `SELECT * FROM authors WHERE id = ?`;
+function getPostById(id, callback) {
+    const sql = `SELECT * FROM posts WHERE id = ?`;
     const params = [ id ];
     connection.query(sql, params, function(err, result) {
         callback(result[0]);
     });
-} */
+}
 
-module.exports = { getAllPosts, insertPost };
+module.exports = { getAllPosts, insertPost, getFivePosts, getPostById };

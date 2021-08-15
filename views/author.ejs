@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
 
-    <header class="header">fantastic book-website
+    <header class="header">post it! (everyone can be an author)
         <nav class="nav">
             <img class="logo" src="\images\book.png" alt="icon book">
             <a href="/">home</a> |
@@ -17,19 +19,30 @@
             <a href="/new_author">new_author</a> |
             <a href="/new_post">new_post</a> |
             <a href="/author?id=2">info</a> |
-            <a href="/posts">posts</a>
+            <a href="/posts">all posts</a>
         </nav>
     </header>
 
     <div class="container1">
-    <p>index: &nbsp;&nbsp;&nbsp;<%= author.id %></p>
-    <p>name: &nbsp;&nbsp;&nbsp;&nbsp;<%= author.name %></p>
-    <p>about: &nbsp;&nbsp;&nbsp;<%= author.description %></p>  
-    </div>  
+
+        <p>index: &nbsp;&nbsp;&nbsp;<%= author.id %>
+        </p>
+        <p>name: &nbsp;&nbsp;&nbsp;&nbsp;<%= author.name %>
+        </p>
+        <p>about: &nbsp;&nbsp;&nbsp;<%= author.description %>
+        </p>
+
+        <br>
+        <br>
+
+        <a href="/posts?id=<%= author.id %>">more by this author</a>
+
+    </div>
 
     <footer class="footer">
         <p>© 2021</p>
     </footer>
 
 </body>
+
 </html>

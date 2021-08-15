@@ -1,11 +1,19 @@
 const connection = require("./connection");
 
 function getAllAuthors(callback) {
-    const sql = `SELECT * FROM authors`;
+    const sql = `SELECT * FROM authors ORDER BY name ASC;`;
     connection.query(sql, function(err, result) {
         callback(result);
     });
 }
+
+function getAllAuthorsSelect(callback) {
+    const sql = `SELECT * FROM authors;`;
+    connection.query(sql, function(err, result) {
+        callback(result);
+    });
+}
+
 
 function getAuthorById(id, callback) {
     const sql = `SELECT * FROM authors WHERE id = ?`;
@@ -25,4 +33,4 @@ function insertAuthor(author, callback) {
     });
 }
 
-module.exports = { getAllAuthors, getAuthorById, insertAuthor };
+module.exports = { getAllAuthors, getAuthorById, insertAuthor, getAllAuthorsSelect };
