@@ -1,7 +1,7 @@
 const connection = require("./connection");
 
 function getAllPosts(callback) {
-    const sql = `SELECT * FROM posts`;
+    const sql = `SELECT * FROM posts ORDER BY ID DESC`;
     connection.query(sql, function(err, result) {
         callback(result);
     });
@@ -32,5 +32,13 @@ function getPostById(id, callback) {
         callback(result[0]);
     });
 }
+
+/* function getPostByAuthorId(id, callback) {
+    const sql = `SELECT * FROM posts WHERE author_id = ?`;
+    const params = [ id ];
+    connection.query(sql, params, function(err, result) {
+        callback(result[0]);
+    });
+} */
 
 module.exports = { getAllPosts, insertPost, getFivePosts, getPostById };

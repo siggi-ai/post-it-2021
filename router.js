@@ -16,6 +16,5 @@ router.get("/new_post", postsController.createPost);
 router.post("/new_post", postsController.createPost);
 router.get("/author", authorController.renderAuthor);             //author?id=<number>
 router.get("/post", postsController.renderPostById);            //post?id=<number></number>
-router.get("/post", authorController.authorsSelect);
 
 module.exports = router;

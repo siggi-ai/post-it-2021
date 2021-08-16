@@ -11,15 +11,16 @@
 
 <body>
 
-    <header class="header">post it! (everyone can be an author)
+    <header class="header">post it!
         <nav class="nav">
             <img class="logo" src="\images\book.png" alt="icon book">
             <a href="/">home</a> |
-            <a href="/authors">authors</a> |
+            <a href="/authors">all authors</a> |
+            <a href="/posts">all posts</a> |
             <a href="/new_author">new_author</a> |
             <a href="/new_post">new_post</a> |
-            <a href="/author?id=2">info</a> |
-            <a href="/posts">all posts</a>
+            <a href="/author?id=2">info author</a> |
+            <a href="/?post=1">post by author</a>
         </nav>
     </header>
 
@@ -28,8 +29,10 @@
         <form method="POST" action="/new_post" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="submitted" value="1">
             <select name="author" id="author">
-                <option value="<%= authors.name %>"></option>
+                <option value="<%= %>">choose your author_id</option>
             </select>
+            <br>
+            <br>
             <input type="text" name="title" placeholder="Title">
             <br>
             <br>

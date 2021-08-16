@@ -25,18 +25,18 @@ function renderFivePosts(req, res) {
 
 
 function createPost(req, res) {
+
     if (req.body.submitted) {
         // It would be a good idea to use the validator here
         const title = req.body.title;
         const postNew = req.body.postNew;
 
         const postObject = { title, postNew };
-
         console.log(postObject);
-
+        
         post.insertPost(postObject, function(result) {
             res.render("postNew.ejs");
-        });
+        });  
     } else {
         res.render("postNew.ejs");
     }; 
@@ -54,6 +54,19 @@ function renderPostById(req, res) {
         console.log(post);
     });
 }
+
+
+/* function renderPostByAuthorId(req, res) {
+    const id = req.query.id;
+
+    author.getPostByAuthorId(id, function (result) {
+        const pageData = {
+            post: result
+        }
+        res.render("posts.ejs", pageData);
+        console.log(post);
+    });
+} */
 
 
 /* function renderPost(req, res) {
